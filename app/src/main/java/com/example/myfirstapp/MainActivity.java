@@ -21,9 +21,13 @@ public class MainActivity extends AppCompatActivity {
     public void sendMessage(View view){
         EditText editText = (EditText) findViewById(R.id.editText);
         String message = editText.getText().toString();
-        message = message.replace(" ","%20");
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=" + message));
+        Intent intent = makeIntent(message);
         startActivity(intent);
+    }
 
+    public Intent makeIntent(String query){
+        Intent intent = new Intent(this,searchResActivity.class);
+        intent.putExtra("query",query);
+        return intent;
     }
 }
