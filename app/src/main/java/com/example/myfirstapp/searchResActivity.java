@@ -2,6 +2,8 @@ package com.example.myfirstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,8 +22,6 @@ public class searchResActivity extends AppCompatActivity {
         initialize_views();
         AmazonApiCall();
         FlipkartApiCall();
-
-
     }
 
     public String getProduct(){
@@ -45,23 +45,61 @@ public class searchResActivity extends AppCompatActivity {
         TextView product = (TextView) findViewById(R.id.textView2);
         product.setText(getProduct());
 
-        //links
-        ImageView Amazonln = (ImageView) findViewById(R.id.imageView4);
-        ImageView Flipkartln = (ImageView) findViewById(R.id.imageView6);
     }
 
     public void AmazonApiCall(){
+        String product = getProduct();
         //TODO - setAmazonApi functionality
-        class Amazonprice extends siteprice{
 
+        class Amazonprice extends siteprice{
+                //implement api
         }
+
+        //setpricefromAmazon
+
+        //setOnclickLink on imageview
+        product = product.replace(" ","%20");
+        final Uri searchquery = Uri.parse("https://www.amazon.in/s?k="+product+"&marketplace=FLIPKART");
+
+        //ImageView
+        ImageView Amazonln = (ImageView) findViewById(R.id.imageView4);
+
+        Amazonln.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW,searchquery);
+                startActivity(intent);
+                //launch amazon on browser
+            }
+        });
+
     }
 
     public void FlipkartApiCall(){
+        String product = getProduct();
         //TODO - setFlipkartApi functionality
-        class Flipkartprice extends siteprice{
 
+        class Flipkartprice extends siteprice{
+            //implement api
         }
+
+        //setpricefromFlipkart
+
+        //setOnClicklink on imageview
+        product = product.replace(" ","%20");
+        final Uri searchquery = Uri.parse("https://www.flipkart.com/search?q="+product);
+
+        ImageView Flipkartln = (ImageView) findViewById(R.id.imageView6);
+
+        Flipkartln.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW,searchquery);
+                startActivity(intent);
+                //launch Flipkart on browser
+            }
+        });
+
     }
 
 
