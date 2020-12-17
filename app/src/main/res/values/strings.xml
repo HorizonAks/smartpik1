@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">myfirstapp</string>
+    <string name="app_name">SMARTPIK</string>
     <string name="edit_message">Enter a Message</string>
     <string name="button_send">Search</string>
     <string name="query">Product</string>
