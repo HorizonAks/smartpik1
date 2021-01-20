@@ -110,13 +110,13 @@ public class searchResActivity extends AppCompatActivity {
 
     public void FlipkartApiCall(){
         String product = getProduct();
-        //TODO - setFlipkart webscraper functionality
+
         //setpricefromFlipkart
 
         //setOnClicklink on imageview
         product = product.replace(" ","%20");
         final Uri searchquery = Uri.parse("https://www.flipkart.com/s?k="+product);
-
+        //TODO - Flipkart webscraper functionality here
         ImageView Flipkartln = (ImageView) findViewById(R.id.imageView6);
 
         Flipkartln.setOnClickListener(new View.OnClickListener() {
