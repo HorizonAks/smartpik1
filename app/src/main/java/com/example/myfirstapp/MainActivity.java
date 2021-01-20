@@ -10,7 +10,12 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    //public static final String EXTRA_MESSAGE = "unique1";
+    /*
+    *
+    * Mini Project By Akshat Jain 1901920130022
+    * and Syed Ibrahim Ahmad
+    *
+    * */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
