@@ -108,15 +108,45 @@ public class searchResActivity extends AppCompatActivity {
         });
     }//end of Amazon scraper
 
+    //scrapes price from Flipkart
     public void FlipkartApiCall(){
         String product = getProduct();
 
         //setpricefromFlipkart
 
-        //setOnClicklink on imageview
+        //prepare string to url parsing
         product = product.replace(" ","%20");
-        final Uri searchquery = Uri.parse("https://www.flipkart.com/s?k="+product);
-        //TODO - Flipkart webscraper functionality here
+        final Uri searchquery = Uri.parse("https://www.flipkart.com/search?q="+product);
+        final Document[] doc = {null};
+        //doc variable which will store the response of the website
+        new Thread(new Runnable() {
+            //running in new thread as internet calls cannot run on main thread
+            @Override
+            public void run() {
+                try {
+                    //try catch to avoid error 404
+                    //use jsoup connect to scrape amazon
+                    doc[0] = Jsoup.connect(String.valueOf(searchquery))
+                            .userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36")
+                            .get();
+                    //query response using cssQuery in doc
+                    Elements products = doc[0].select("._30jeq3");
+                    //"._30jeq3" is a cssQuery that can match prices on Amazon.in
+                    if (products!=null) {
+                        //setValue only if product exist
+                        //using 2nd array element to avoid sponsored productS
+                        Flipkart.setText("" + products.get(2).html());
+                    }else{
+                        //else set not found
+                        Flipkart.setText("Product Not Found");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();//start thread
+
+        //setOnClicklink on imageview
         ImageView Flipkartln = (ImageView) findViewById(R.id.imageView6);
 
         Flipkartln.setOnClickListener(new View.OnClickListener() {
@@ -129,6 +159,7 @@ public class searchResActivity extends AppCompatActivity {
         });
 
     }
+    //end of Flipkart scraper
 
 
 
