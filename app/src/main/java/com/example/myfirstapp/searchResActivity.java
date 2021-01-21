@@ -135,7 +135,7 @@ public class searchResActivity extends AppCompatActivity {
                     if (products!=null) {
                         //setValue only if product exist
                         //using 2nd array element to avoid sponsored productS
-                        Flipkart.setText("" + products.get(0).html());
+                        Flipkart.setText("" + products.get(2).html());
                     }else{
                         //else set not found
                         Flipkart.setText("Product Not Found");

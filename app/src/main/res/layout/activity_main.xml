@@ -6,36 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+
+        app:srcCompat="@drawable/blueui"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
     <Button
         android:id="@+id/button"
-        android:layout_width="177dp"
-        android:layout_height="47dp"
+        android:layout_width="187dp"
+        android:layout_height="36dp"
         android:layout_marginTop="32dp"
+        android:background="#1660FF"
         android:onClick="sendMessage"
         android:text="@string/button_send"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.32" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="219dp"
         android:layout_height="74dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="72dp"
         android:gravity="center"
         android:text="SmartpiK"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#029BCA"
+        android:textColor="#0051FF"
         android:textSize="35sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81"
+        app:layout_constraintVertical_bias="0.502"
         app:layout_constraintVertical_chainStyle="spread" />
 
     <EditText
@@ -45,23 +55,23 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/query"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="89dp"
         android:layout_height="71dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.844"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintVertical_bias="0.199"
+        app:srcCompat="@drawable/smartpiklogo" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

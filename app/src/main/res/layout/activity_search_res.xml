@@ -7,24 +7,38 @@
     tools:context=".searchResActivity">
 
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/blueuii"
+        android:scaleType="fitXY"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"/>
+
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="111dp"
-        android:layout_height="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
+        android:layout_marginTop="220dp"
         android:text="Results"
+        android:textColor="#0051FF"
+        android:background="#AABAD9"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="209dp"
         android:layout_height="73dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="360dp"
         android:ems="10"
         android:fontFamily="@font/bungee"
         android:text="Amazon URL and Price"
@@ -42,9 +56,9 @@
         android:gravity="center"
         android:text="SmartpiK"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#029BCA"
+        android:textColor="#0051FF"
         android:textSize="36sp"
-        android:textStyle="italic"
+
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.293"
@@ -57,7 +71,7 @@
         android:id="@+id/textView4"
         android:layout_width="205dp"
         android:layout_height="79dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="460dp"
         android:fontFamily="@font/bungee"
         android:text="Flipkart URL and Price"
         android:textSize="18sp"
@@ -70,7 +84,7 @@
         android:id="@+id/imageView4"
         android:layout_width="111dp"
         android:layout_height="57dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="360dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -81,7 +95,7 @@
         android:id="@+id/imageView6"
         android:layout_width="138dp"
         android:layout_height="61dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="460dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toEndOf="@+id/textView4"
@@ -97,7 +111,9 @@
         app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/smartpiklogo" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
