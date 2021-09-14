@@ -7,4 +7,4 @@ How to Install:
 Download the apk from here:
 https://drive.google.com/file/d/1GpFlD0fLq3jIDOl_-e4-J851SN7cdVdJ/view?usp=sharing
 
-Dev: HorizonAks, 
+MadeBy: HorizonAks, Ibrahim171
